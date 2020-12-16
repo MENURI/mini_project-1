@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+  {% include ["a.html", "public/head.html"] ignore missing %}
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    {% include "public/nav.html" %}
+    {% include "public/menu.html" %}
+
+    <!-- external방식. html외부에서 사용하는 방식 -->
+    <!-- 
+        - jQuery는  1. 찾아라( 특정해라 )
+                    2. 처리해라( 특정한 대상기준으로 처리 )
+        - 특정하는 방법
+            -'$( css selector or 사전에 정의된 객체명 )'를 사용
+        - 처리하는 방법
+            - 함수
+     -->
+     <form method="post">
+      <div class="w3-container">
+          <div class="option_box_grey box_option_inventory">
+            <div id="goods_opt_area" class="option_cont">
+              <select id="option1" name="option1" class="option1">
+                <option>ARC-Logo hooded Sweatshirt Grey</option>
+              </select>
+              <select id="option2" name="option2" class="option2">
+                <option value="" selected="selected">옵션 선택</option>
+                <option value="S" data-txt="S" jaego_yn="Y">S</option>
+                <option value="M" data-txt="M" jaego_yn="Y">M</option>
+                <option value="L" data-txt="L" jaego_yn="Y">L</option>
+              </select>
+              <input id='to_cart' name='to_cart' type="submit" value="장바구니 담기"/>
+            </div>
+          </div>
+        </div>
+      </form>    
+     <script>
+      $('[name=to_cart]').on('click', ( event )=>{
+      alert('클릭했다.')
+      })   
+      console.log($('[name=option1]').val())
+      console.log($('[name=option2]').val())
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+  <div class="content-wrapper">
+
+
+</div>
+{% include "public/js.html" %}
+
+</body>
+
+</html>
