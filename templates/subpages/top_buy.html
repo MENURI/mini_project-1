@@ -16,7 +16,6 @@
     <div class="content-wrapper">
         <!-- Page Container -->
         <div class="w3-content w3-margin-top" style="max-width:1600px;">
-
             <!-- The Grid -->
             <div class="w3-row-padding">
 
@@ -66,7 +65,7 @@
                     <!-- End Left Column -->
                 </div>
 
-                <!-- Right Column -->
+<!-- Right Column -->
                 <div class="w3-twothird">
 
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -92,75 +91,77 @@
                         </div>
 
 
-                        <!-- 사이즈와 상품명 보내기 -->
+
+                    <!-- 상품 정보 -->
+                    <div class="w3-container ">
                         <form method="post">
-                            <div class="w3-container">
-                                <div class="option_box_grey box_option_inventory">
-                                    <div id="goods_opt_area" class="option_cont">
-                                        <select id="option1" name="option1" class="option1">
-                                            <option>ARC-Logo hooded Sweatshirt Grey</option>
-                                        </select>
-                                        <select id="option2" name="option2" class="option2"
-                                            onchange="prepareOrder.selectOption('624932','0', '1', '0', '3', '', '1', '999', this)">
-                                            <option value="" selected="selected">옵션 선택</option>
-                                            <option value="S" data-txt="S" jaego_yn="Y">S</option>
-                                            <option value="M" data-txt="M" jaego_yn="Y">M</option>
-                                            <option value="L" data-txt="L" jaego_yn="Y">L</option>
-                                        </select>
-                                        <input name='to_cart' type="submit" value="장바구니 담기" />
-                                    </div>
+                            <div class="option_box_grey box_option_inventory">
+                                <div id="goods_opt_area" class="option_cont">
+                                    <select id="option1" name="option1" class="option1">
+                                        <option>ARC-Logo hooded Sweatshirt Grey</option>
+                                    </select>
+                                    <select id="option2" name="option2" class="option2"
+                                        onchange="prepareOrder.selectOption('624932','0', '1', '0', '3', '', '1', '999', this)">
+                                        <option value="" selected="selected">옵션 선택</option>
+                                        <option value="S" data-txt="S" jaego_yn="Y">S</option>
+                                        <option value="M" data-txt="M" jaego_yn="Y">M</option>
+                                        <option value="L" data-txt="L" jaego_yn="Y">L</option>
+                                    </select>
+                                    <input name='to_cart' type="submit" value="장바구니 담기" />
                                 </div>
-                            </div>
+                            </div>      
                         </form>
-                        <br>
-
-                        <div class="w3-container w3-card w3-white">
-                            <div class="box_material">
-                                <!--사이즈정보-->
-                                <h2 class="w3-text-grey w3-padding-16"><span class="korSub">사이즈 정보</span></h2>
-                                <table class="table_th_grey">
-                                    <table>
-                                        <tr>
-                                            <th>사이즈</th>
-                                            <th>총장</th>
-                                            <th>어깨너비</th>
-                                            <th>가슴단면</th>
-                                        </tr>
-                                        <tr>
-                                            <td>S <span class="w3-tag w3-teal w3-round">품절임박</span></td>
-                                            <td>66</td>
-                                            <td>51</td>
-                                            <td>60</td>
-                                        </tr>
-                                        <tr>
-                                            <td>M</td>
-                                            <td>69</td>
-                                            <td>55</td>
-                                            <td>63</td>
-                                        </tr>
-                                        <tr>
-                                            <td>L</td>
-                                            <td>72</td>
-                                            <td>58</td>
-                                            <td>66</td>
-                                        </tr>
-                                    </table>
-                                    <br>
-                                    <div class="product-note-box">
-                                        <i class="ic-30-stencil-exclamation"></i>
-                                        <ul class="n-info-txt">
-                                            <li>하단의 상품 상세 설명란의 사이즈표는 업체 기준 측정입니다.</li>
-                                            <li>모니터해상도, 컬러설정에 따라 제품이 왜곡되거나 컬러가 다르게 보일 수 있습니다.</li>
-                                            <li>사이즈 실측의 경우 제품의 특성및 측정방식에 따라 오차가 발생할 수 있습니다.</li>
-                                        </ul>
-                                    </div>
-                                    <!--//사이즈정보-->
-                            </div>
-                        </div>
-
-                        <!-- End Right Column -->
                     </div>
+                    <br>
+                    </div>
+                    <!-- // 상품 정보 -->
 
+                    <!-- 사이즈 정보 -->
+                    <div class="w3-container w3-card w3-white">
+                        <div class="box_material">
+                            <!--사이즈정보-->
+                            <h2 class="w3-text-grey w3-padding-16"><span class="korSub">사이즈 정보</span></h2>
+                            <table class="table_th_grey">
+                                    <tr>
+                                        <th>사이즈</th>
+                                        <th>총장</th>
+                                        <th>어깨너비</th>
+                                        <th>가슴단면</th>
+                                    </tr>
+                                    <tr>
+                                        <td>S <span class="w3-tag w3-teal w3-round">품절임박</span></td>
+                                        <td>66</td>
+                                        <td>51</td>
+                                        <td>60</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M</td>
+                                        <td>69</td>
+                                        <td>55</td>
+                                        <td>63</td>
+                                    </tr>
+                                    <tr>
+                                        <td>L</td>
+                                        <td>72</td>
+                                        <td>58</td>
+                                        <td>66</td>
+                                    </tr>
+                            </table>
+                            <br>
+                            <div class="product-note-box">
+                                <i class="ic-30-stencil-exclamation"></i>
+                                <ul class="n-info-txt">
+                                    <li>하단의 상품 상세 설명란의 사이즈표는 업체 기준 측정입니다.</li>
+                                    <li>모니터해상도, 컬러설정에 따라 제품이 왜곡되거나 컬러가 다르게 보일 수 있습니다.</li>
+                                    <li>사이즈 실측의 경우 제품의 특성및 측정방식에 따라 오차가 발생할 수 있습니다.</li>
+                                </ul>
+                            </div>
+                                <!--//사이즈정보-->
+                        </div>
+                    </div>
+                    <!--  //사이즈 정보-->
+
+<!-- End Right Column -->
                     <!-- End Grid -->
                 </div>
 
