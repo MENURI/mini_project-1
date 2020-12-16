@@ -1,4 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 부트스트랩 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- 부트스트랩 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
     html,
     body,
@@ -97,9 +101,11 @@
                         <form method="post">
                             <div class="option_box_grey box_option_inventory">
                                 <div id="goods_opt_area" class="option_cont">
+                                    <!-- 상품 옵션 선택(고정) -->
                                     <select id="option1" name="option1" class="option1">
                                         <option>ARC-Logo hooded Sweatshirt Grey</option>
                                     </select>
+                                    <!-- 사이즈 옵션 선택 -->
                                     <select id="option2" name="option2" class="option2"
                                         onchange="prepareOrder.selectOption('624932','0', '1', '0', '3', '', '1', '999', this)">
                                         <option value="" selected="selected">옵션 선택</option>
@@ -108,6 +114,12 @@
                                         <option value="L" data-txt="L" jaego_yn="Y">L</option>
                                     </select>
                                     <input name='to_cart' type="submit" value="장바구니 담기" />
+                                    <!-- 장바구니 이동 버튼 -->
+                                    <div>
+                                        <button type="button" class="btn btn-default btn-sm">
+                                          <span class="glyphicon glyphicon-shopping-cart"></span>장바구니 확인
+                                        </button>
+                                    </div>
                                 </div>
                             </div>      
                         </form>

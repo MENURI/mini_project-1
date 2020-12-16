@@ -12,3 +12,6 @@
 - public > head.html에 jquery 추가
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+12.16
+
+- 부트스트랩 > top_buy에 추가
