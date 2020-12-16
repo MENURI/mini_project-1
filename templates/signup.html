@@ -1,0 +1,95 @@
+{#
+- 본 페이지는 회원가입 기능
+- index.html과 레이아웃은 동일하게 유지되면서, 콘텐츠만 변경되는 구조
+#}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include ["a.html", "public/head.html"] ignore missing %}
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        {% include "public/nav.html" %}
+        {% include "public/menu.html" %}
+        {# 실제 서비스 화면 start #}
+
+
+        <div class="content-wrapper">
+            {# 모든 콘텐츠의 헤더 파트이고, 현재 페이지가 어디 에 위치해있는지
+            그 경로를 네비게이션하고 있다(모든 페이지는 필수로 유지) #}
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">회원가입</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="{{ url_for('home') }}">Home</a></li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    {# row 단위로 한줄의 콘텐츠가 생성 #}
+                    <table border='1'>
+                        <thead>
+                            <tr>
+                                <td>아이디</td>
+                                <td> <input type='text'/> </td>
+                            </tr>
+                            <tr>
+                                <td>비밀번호</td>
+                                <td> <input type='text'/> </td>
+                            </tr>
+                            <tr>
+                                <td>연락처</td>
+                                <td> <input type='text'/> </td>
+                            </tr>                            
+                            <tr>
+                                <td>주소</td>
+                                <td> <input type='text'/> </td>
+                            </tr>
+                    
+                            
+                        </thead>    
+                        <tbody>
+                            
+                                <tr>   
+                                                            
+                                </tr>
+                                                    
+                        </tbody>
+                    </table>
+                    <tr><button>가입하기</button>    </tr>
+                    <div class="row">
+                        {# col-lg-숫자(12칸)로 컬럼의 차지하는 크기를 지정 #}
+                        <div class="col-lg-12 col-6">
+
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+
+
+
+
+        {# 실제 서비스 화면 end #}
+
+        {% include "public/footer.html" %}
+        {% include "public/aside.html" %}
+    </div>
+    {% include "public/js.html" %}
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask import jsonify
-
+from db.d_6 import *
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
@@ -13,6 +13,32 @@ app.secret_key = 'sakccsdcocjk2sdjkdskcj'
 app.config['SECRET_KEY'] = '12341234' #  비밀번호
 # [3] SocketIO 생성시 Flask 객체를 래핑
 socketio = SocketIO( app, cors_allowed_origins="*", async_mode='threading' )
+
+@app.route('/signup', methods=['GET','POST'] )
+def signup():    
+
+        return render_template('signup.html')
+
+
+@app.route('/login', methods=['GET','POST'] )
+def login():    
+    if request.method == 'GET': # 화면 처리 담당
+        return render_template('login.html') # View
+    else: # POST
+        uid = request.form.get('uid')
+        upw = request.form.get('upw')
+        user = db_selectLogin( uid, upw )
+        if user:
+            return redirect( url_for('home2') )
+        else:        
+            return render_template('alert.html')  
+
+@app.route('/loginindex')
+def home2():    
+    # 렌더링시 데이터를 전달하고 싶으면 키=값 형태로 파라미터를 추가
+    # **kargs
+    return render_template('loginindex.html', name='사용자명')
+
 
 
 @app.route('/')
