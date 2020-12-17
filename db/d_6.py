@@ -112,8 +112,6 @@ def db_selectNameStock(keyword):
     return rows
 
 # 종목 코드를 넣어서 해당 종목 1개의 상세정보를 가져온다
-
-
 def db_selectStockByCode(code):
     conn = None
     row = None
@@ -143,8 +141,6 @@ def db_selectStockByCode(code):
 
 # 코드와 일치하는 종목의 정보를 수정한다
 # 성공하면 1, 실패하면 0
-
-
 def db_updateStockInfo(code, indu, product):
     conn = None
     result = 0
@@ -167,7 +163,7 @@ def db_updateStockInfo(code, indu, product):
                         where
                             `code`=%s;  '''
             print( sql.strip())
-            cursor.execute(sql, ( indu, product, code))
+            cursor.execute(sql, (indu, product, code))
 
         # 디비에 실제 반영을 수행
         conn.commit() # 커밋 -> 실반영 -> 성공/실패 여부를 알수 있다
@@ -182,6 +178,37 @@ def db_updateStockInfo(code, indu, product):
     # 연결오류, 아이디비번 불일치 -> None
     return result
 
+
+def db_signupUsers(uid, upw, name):
+    conn   = None
+    result = 0
+    try:
+        conn = my.connect(host='localhost',
+                          user='root',
+                          password='12341234',
+                          db='python_db',
+                          charset='utf8mb4',
+                          cursorclass=my.cursors.DictCursor
+                          )
+        print('연결성공')
+
+        with conn.cursor() as cursor:
+            # 파라미터를 무조건 execute()를 통해서 넣을 필요는 없다
+            sql = '''  INSERT INTO users (uid, upw, name) VALUES (%s, %s, %s);  '''
+            cursor.execute(sql, (uid, upw, name))
+
+            conn.commit() # 커밋 -> 실반영 -> 성공/실패 여부를 알수 있다
+            result = conn.affected_rows() # 영향을 받은수 => 0 or 1 <=
+
+    except Exception as e:
+        print('예외발생', e)
+    finally:
+        if conn:
+            conn.close()
+
+    return result
+
+# 종목 코드를 넣어서 해당 종목 1개의 상세정보를 가져온다
 
 if __name__ == "__main__":
     #print(db_selectStockByCode('309930'))

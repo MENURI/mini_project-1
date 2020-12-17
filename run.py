@@ -14,10 +14,20 @@ app.config['SECRET_KEY'] = '12341234' #  비밀번호
 # [3] SocketIO 생성시 Flask 객체를 래핑
 socketio = SocketIO( app, cors_allowed_origins="*", async_mode='threading' )
 
+
 @app.route('/signup', methods=['GET','POST'] )
 def signup():    
-
+    if request.method == 'GET': # 화면 처리 담당
         return render_template('signup.html')
+    else:
+        uid  = request.form.get('uid')
+        upw  = request.form.get('upw')
+        name = request.form.get('name')
+        user = db_signupUsers(uid, upw, name)
+        if user:
+            return render_template('alert2.html')
+        else:        
+            return redirect( url_for('home') )  
 
 
 @app.route('/login', methods=['GET','POST'] )
